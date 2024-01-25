@@ -8,6 +8,13 @@ saludar=function(){
     let mensajeBienvenida="bienvenido "+nombre+" "+apellido;
 
     mostrarTexto("lblResultado",mensajeBienvenida);
+    mostrarImagen("imgSaludo","./imagenes/2.gif");
+}
+
+mostrarImagen=function(idComponente, rutaImagen){
+    let componente;
+    componente=document.getElementById(idComponente);
+    componente.src= rutaImagen;
 }
 
 mostrarTexto=function(idComponente, mensaje){
