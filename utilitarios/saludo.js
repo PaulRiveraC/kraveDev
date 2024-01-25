@@ -9,8 +9,14 @@ saludar=function(){
 
     mostrarTexto("lblResultado",mensajeBienvenida);
     mostrarImagen("imgSaludo","./imagenes/2.gif");
+    mostrarTextoEnCaja("TxtNombre"," ");
 }
 
+mostrarTextoEnCaja= function(idComponente,mensaje){
+    let componente;
+    componente=document.getElementById(idComponente);
+    componente.value = mensaje;
+}
 mostrarImagen=function(idComponente, rutaImagen){
     let componente;
     componente=document.getElementById(idComponente);
