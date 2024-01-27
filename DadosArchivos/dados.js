@@ -13,12 +13,12 @@ jugar=function(){
 
 lanzarDado=function(){
     let aleatorio;
-    let numeromultiplicado;
+    let numeroMultiplicado;
     let numeroEntero;
     let valorDado;
     aleatorio=Math.random();
-    numeromultiplicado=aleatorio*6;
-    numeroEntero=parseInt(numeromultiplicado);
+    numeroMultiplicado=aleatorio*6;
+    numeroEntero=parseInt(numeroMultiplicado);
     valorDado=numeroEntero+1;
     return valorDado;
 }
