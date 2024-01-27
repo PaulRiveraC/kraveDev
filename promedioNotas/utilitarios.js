@@ -38,3 +38,15 @@ recuperarFloat= function(idComponente){
     valorflotante= parseFloat(valorcaja);
     return valorflotante;
 }
+
+modificarImagenExito = function(){
+    let cmpImagen1;
+    cmpImagen1=document.getElementById("imagen1");
+    cmpImagen1.src="bien.gif ";
+}
+
+modificarImagenFracaso = function(){
+    let cmpImagen1;
+    cmpImagen1=document.getElementById("imagen1");
+    cmpImagen1.src="mal.gif ";
+}
