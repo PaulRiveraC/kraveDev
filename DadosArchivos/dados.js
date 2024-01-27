@@ -1,8 +1,8 @@
 jugar=function(){
-    let valorRecuperado;
-    valorRecuperado=lanzarDado();
-    cambiarTexto("lblNumero",valorRecuperado);
-    if(valorRecuperado>3){
+    let aleatorio;
+    aleatorio=lanzarDado();
+    cambiarTexto("lblNumero",aleatorio);
+    if(aleatorio>3){
         cambiarTexto("lblNumero","es mayor a 3");
         cambiarTexto("lblNumero2","ganaste");
     }else{
@@ -15,11 +15,10 @@ lanzarDado=function(){
     let aleatorio;
     let numeromultiplicado;
     let numeroEntero;
-    let valordado;
+    let valorDado;
     aleatorio=Math.random();
     numeromultiplicado=aleatorio*6;
     numeroEntero=parseInt(numeromultiplicado);
-    valordado=numeroEntero+1;
-    return valordado;
-  
+    valorDado=numeroEntero+1;
+    return valorDado;
 }
