@@ -50,3 +50,9 @@ modificarImagenFracaso = function(){
     cmpImagen1=document.getElementById("imagen1");
     cmpImagen1.src="mal.gif ";
 }
+
+modificarImagenExelente = function(){
+    let cmpImagen1;
+    cmpImagen1=document.getElementById("imagen1");
+    cmpImagen1.src="EXCELENTE.gif ";
+}
