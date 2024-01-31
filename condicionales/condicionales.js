@@ -113,34 +113,51 @@ esMinuscula=function(caracter){
     let mensaje;
     let recuperar=RecuperarTexto(caracter);
     let letra=recuperar.charCodeAt(0);
-    if(letras>= 97){
+    if(letras >= 97){
         if(letra<=122){
             mensaje=true;
-        } else{
-            mensaje=false;
-        }
-    }else{
-        mensaje=false;
-    }
-
-    if (letra>=60){
-        if(letra <= 163){
+        } else if(letra==130){
             mensaje=true;
+        } else if (letra>=160){
+            if(letra <= 163){
+                mensaje=true;
+            } else{
+                mensaje=false;
+            }
         } else{
-            mensaje=false;
+        mensaje=false;
         }
     } else{
         mensaje=false;
-    }
-
-    if(letra==130){
-        mensaje=true;
-    } else{
-        mensaje=false;
-    }
-
+        }
     return mensaje;
 }
+
+esMinuscula=function(caracter){
+    let mensaje;
+    let recuperar=RecuperarTexto(caracter);
+    let letra=recuperar.charCodeAt(0);
+    if (letras >= 97){
+        if (letra<=122){
+            mensaje=true;
+        } else if (letra==130){
+            mensaje=true;
+        } else if (letra>=160){
+            if (letra <= 163){
+                mensaje=true;
+            } else {
+                mensaje=false;
+            }
+        } else {
+            mensaje=false;
+        }
+    } else {
+        mensaje=false;
+    }
+    return mensaje;
+}
+
+
 
 esDigito=function(caracter){
     let mensaje;
