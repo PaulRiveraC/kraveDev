@@ -15,6 +15,7 @@ calcularTasaInteres=function(ingresoAnual){
     }else{
         tasa=(convertido*12)/100;
     }
+    mostrarTexto(tasa);
     return tasa;
 }
 
@@ -38,6 +39,7 @@ calcularCapacidadPago=function(edad,ingresos,egresos){
             alert("edad erronea");
         }
     }
+    mostrarTexto(cuota);
     return cuota;
 }
 
@@ -56,6 +58,7 @@ calcularDescuento =function(precio, cantidad){
     }else {
         valorPagar=precio1-((precio1*4)/100);
     }
+    mostrarTexto(valorPagar);
     return valorPagar;
 }
 
@@ -74,6 +77,7 @@ determinarColesterolLDL=function(nivelColesterol){
     }else {
         mensaje="Muy alto";
     }
+    mostrarTexto(mensaje);
     return mensaje;
 }
 
@@ -90,6 +94,7 @@ validarClave=function(clave){
     } else{
         mensaje=false;
     }
+    mostrarTexto(mensaje);
     return mensaje;
 }
 
@@ -106,6 +111,7 @@ esMayuscula=function(caracter){
     }else{
         mensaje=false;
     }
+    mostrarTexto(mensaje);
     return mensaje;
 }
 
@@ -130,6 +136,7 @@ esMinuscula=function(caracter){
     } else{
         mensaje=false;
         }
+    mostrarTexto(mensaje);
     return mensaje;
 }
 
@@ -154,10 +161,9 @@ esMinuscula=function(caracter){
     } else {
         mensaje=false;
     }
+    mostrarTexto(mensaje);
     return mensaje;
 }
-
-
 
 esDigito=function(caracter){
     let mensaje;
@@ -172,6 +178,7 @@ esDigito=function(caracter){
     }else{
         mensaje=false;
     }
+    mostrarTexto(mensaje);
     return mensaje;
 }
 
@@ -189,6 +196,7 @@ darPermiso=function(notaMatematica,notaFisica,notaGeomatria){
     }else {
             mensaje=false;
         }
+    mostrarTexto(mensaje);
     return mensaje;
 }
 
@@ -209,6 +217,7 @@ otorgarPermiso=function(notaMatematica,notaFisica,notaGeomatria){
     }else {
             mensaje=false;
         }
+    mostrarTexto(mensaje);
     return mensaje;
 }
 
@@ -244,6 +253,8 @@ dejarSalir=function(notaMatematica,notaFisica,notaGeomatria){
             mensaje2="No hay premio doble";
         }
     }
+    mostrarTexto(mensaje);
+    alert(mensaje2);
     return mensaje, mensaje2;
 }
 
