@@ -1,9 +1,9 @@
 
-calcularValorDescuento=function(cantidad,valorSubtotal){
+calcularValorDescuento = function (cantidad, valorSubtotal) {
     if (cantidad < 3) {
         descuentos = 0;
     } else if (cantidad <= 5) {
-        descuentos= (valorSubtotal * 3  ) / 100;
+        descuentos = (valorSubtotal * 3) / 100;
     } else if (cantidad > 5 & cantidad <= 11) {
         descuentos = (valorSubtotal * 4) / 100;
     } else if (cantidad > 11) {
@@ -12,18 +12,48 @@ calcularValorDescuento=function(cantidad,valorSubtotal){
     return descuentos;
 }
 
-calcularIva=function(monto){
-    iva=(monto*12)/100;
+calcularIva = function (monto) {
+    iva = (monto * 12) / 100;
     return iva;
 }
 
-calcularSubtotal=function(precio,cantidad){
-    totalapagar=precio*cantidad;
+calcularSubtotal = function (precio, cantidad) {
+    totalapagar = precio * cantidad;
     return totalapagar;
 }
 
-calcularTotal=function(subtotal,descuento,iva){
-    valorTotalaPagar=subtotal-descuento+iva;
+calcularTotal = function (subtotal, descuento, iva) {
+    valorTotalaPagar = subtotal - descuento + iva;
     return valorTotalaPagar;
 }
 
+validarProducto = function (recuperar) {
+    const letra2= recuperar.length;
+    if (letra2>=0 && letra2<=10){
+        mensaje=true;
+    }else{
+        mensaje=false;
+    }
+    return mensaje;
+}
+
+
+validarCantidad = function (recuperar) {
+    let mensaje;
+    if (recuperar>=0 & recuperar <=100){
+        mensaje=true;
+    }else{
+        mensaje=false;
+    }
+    return mensaje;
+}
+
+validarPrecio = function (recuperar) {
+    let mensaje;
+    if (recuperar>=0 & recuperar <=50){
+        mensaje=true;
+    }else{
+        mensaje=false;
+    }
+    return mensaje;
+}

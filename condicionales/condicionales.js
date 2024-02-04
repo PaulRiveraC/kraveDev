@@ -19,7 +19,7 @@ calcularTasaInteres=function(ingresoAnual){
     return tasa;
 }
 
-calcularCapacidadPago=function(edad,ingresos,egresos){
+calcularCapacidadPago=function(edad1,ingresos,egresos){
     let cuota;
     let capacidad;
     let recuperar=RecuperarTexto(edad1);
