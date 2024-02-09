@@ -125,4 +125,9 @@ validarEstructura = function (placa) {
 
 }
 
+obtenerTipoVehiculo=function(placa){
+    let validacionLongitud = longitud(placa);
+    let provincia= letraProvincia (placa, 1);
+    return provincia;
+}
 
