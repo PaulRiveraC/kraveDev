@@ -125,9 +125,29 @@ validarEstructura = function (placa) {
 
 }
 
-obtenerTipoVehiculo=function(placa){
+obtenerProvincia=function(placa){
     let validacionLongitud = longitud(placa);
-    let provincia= letraProvincia (placa, 1);
+    let provincia= letraProvincia (placa, 0);
     return provincia;
 }
 
+obtenerTipoVehiculo=function(placa){
+    let validacionLongitud = longitud(placa);
+    let vehiculo= letraVehiculo  (placa, 1);
+    return vehiculo;
+}
+
+
+obtenerDiaYPlaca=function(placa){
+    let validacionLongitud = longitud2(placa);
+    let vehiculo= letraPicoPlaca(placa,validacionLongitud);
+    return vehiculo;
+}
+
+limpiar = function () {
+    mostrarTexto("lblResumen","");
+    mostrarTexto("lblResumen2","");
+    mostrarTexto("lblResumen3","");
+    mostrarTexto("lblResumen4","");
+    mostrarTexto("lblResumen5","");
+}

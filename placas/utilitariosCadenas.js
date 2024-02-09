@@ -68,6 +68,50 @@ letraProvincia = function (caracter, posicion) {
     return mensaje;
 }
 
+letraVehiculo = function (caracter, posicion) {
+    let mensaje;
+    let letra = caracter.charCodeAt(posicion);
+    if (letra == 65 || letra == 90) {
+        mensaje = "vehiculo comercial";
+    } else if (letra == 69) {
+        mensaje = "vehiculo gubernamental";
+    } else if (letra == 88) {
+        mensaje = "vehiculo de uso oficial";
+    } else if (letra == 83) {
+        mensaje = "vehiculo del gobierno provincial";
+    } else if (letra == 77) {
+        mensaje = "vehiculo minicipal";
+    } else if (letra >= 65) {
+        if (letra <= 90) {
+            if (letra !== 65 || letra !== 90 || letra !== 69 || letra !== 88 || letra !== 83 || letra !== 77 || letra !== 65) {
+                mensaje = "vehiculo particular";
+            } else {
+                mensaje = null;
+            }
+        }
+    } else {
+        mensaje = null;
+    }
+    return mensaje;
+}
+
+letraPicoPlaca = function (caracter, posicion) {
+    let mensaje;
+    let letra = caracter.charCodeAt(posicion);
+    if (letra == 49 || letra == 50) {
+        mensaje = "PICO Y PLACA LUNES";
+    } else if (letra == 51 || letra == 52) {
+        mensaje = "PICO Y PLACA MARTES";
+    } else if (letra == 53 || letra == 54) {
+        mensaje = "PICO Y PLACA MIERCOLES";
+    } else if (letra == 55 || letra == 56) {
+        mensaje = "PICO Y PLACA JUEVES";
+    } else if (letra == 48 || letra == 57) {
+        mensaje = "PICO Y PLACA VIERNES";
+    }
+    return mensaje;
+}
+
 esDigito = function (caracter, posicion) {
     let mensaje;
     let letra = caracter.charCodeAt(posicion);
@@ -93,5 +137,3 @@ esGuion = function (caracter, posicion) {
     }
     return mensaje;
 }
-
-

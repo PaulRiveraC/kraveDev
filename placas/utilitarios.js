@@ -49,6 +49,12 @@ longitud = function (recuperar) {
     return mensaje;
 }
 
+longitud2 = function (recuperar) {
+    const letra2= recuperar.length;
+    let mensaje=letra2-1;
+    return mensaje;
+}
+
 verificarlongitud8 = function (recuperar) {
     const letra2= recuperar.length;
     if (letra2==8){
