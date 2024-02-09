@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="placas.css" />
+    <script src="placas.js"> </script>
+    <script src="serviciosPlacas.js"> </script>
+    <script src="utilitarios.js"> </script>
+    <script src="utilitariosCadenas.js"> </script>
+</head>
+
+<body>
+    <div class="principal">
+        <div class="logoEscuela">
+            <img src="main.png" width="80%" />
+        </div>
+
+
+        <div class="contenido">
+            <div class="titulo">
+                VERIFICADOR DE PLACAS
+            </div>
+
+            <div class="ingresoDatos">
+                <div class="tituloCampo">
+                    INGRESE PLACA
+                </div>
+                <div>
+                    <input type="text" class="cajaTexto" id="lblPlaca" />
+                    <input type="button" value="VALIDAR" onclick="validarPlaca();" />
+                </div>
+            </div>
+
+
+        </div>
+        <div class="areaResultado">
+            <h2></h2>
+            <h2></h2>
+            <div class="resultado">
+                <div id="lblResumen">
+                </div>
+            </div>
+
+            <div class="resultado">
+                <div id="lblResumen2">
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
