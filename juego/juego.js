@@ -117,8 +117,8 @@ jugarpiedra = function (seleccionado) {
         mostrarTexto("lblGanador", "PERDISTE LA PARTIDA(@__@)...!!!");
         puntosComputador=puntosComputador+1;
     }
-    mostrarTexto("lblPuntaje","Puntaje Usuario:"+puntosComputador);
-    mostrarTexto("lblPuntaje2","Puntaje Computador:"+puntosUsuario);
+    mostrarTexto("lblPuntaje","Puntaje Usuario:"+puntosUsuario);
+    mostrarTexto("lblPuntaje2","Puntaje Computador:"+puntosComputador);
     final (puntosUsuario,puntosComputador);
 //    console.log(puntosComputador);
 //    console.log(puntosUsuario);
@@ -151,8 +151,8 @@ jugarpapel = function (seleccionado) {
         mostrarTexto("lblGanador", "PERDISTE LA PARTIDA(@__@)...!!!");
         puntosComputador=puntosComputador+1;
     }
-    mostrarTexto("lblPuntaje","Puntaje Usuario:"+puntosComputador);
-    mostrarTexto("lblPuntaje2","Puntaje Computador:"+puntosUsuario);
+    mostrarTexto("lblPuntaje","Puntaje Usuario:"+puntosUsuario);
+    mostrarTexto("lblPuntaje2","Puntaje Computador:"+puntosComputador);
     final (puntosUsuario,puntosComputador);
 //    console.log(puntosComputador);
 //    console.log(puntosUsuario);
@@ -184,8 +184,8 @@ jugartijera = function (seleccionado) {
         mostrarTexto("lblGanador", "PERDISTE LA PARTIDA(@__@)...!!!");
         puntosComputador=puntosComputador+1;
     }
-    mostrarTexto("lblPuntaje","Puntaje Usuario:"+puntosComputador);
-    mostrarTexto("lblPuntaje2","Puntaje Computador:"+puntosUsuario);
+    mostrarTexto("lblPuntaje","Puntaje Usuario:"+puntosUsuario);
+    mostrarTexto("lblPuntaje2","Puntaje Computador:"+puntosComputador);
     final (puntosUsuario,puntosComputador);
 //    console.log(puntosComputador);
 //    console.log(puntosUsuario);
@@ -208,4 +208,6 @@ limpiar = function () {
     mostrarTexto("lblPuntaje","Puntaje Usuario:0");
     mostrarTexto("lblPuntaje2","Puntaje Computador:0");
     mostrarTexto("lblRespuesta","");
+    puntosComputador=0;
+    puntosUsuario=0;
 }
