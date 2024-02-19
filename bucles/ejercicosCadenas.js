@@ -27,9 +27,14 @@ recorrerCadenaInversa = function (cadena){
     //0123
     //juan
     let caracter;
+    let mensaje2="";
+    let mostrar;
     let posicion = cadena.length;
     for (let i=posicion-1; i >= 0; i--){
         caracter=cadena.charAt(i);
         console.log("Caracter "+caracter+" posicion "+i);
+        mensaje2=mensaje2+caracter;
+        
     }
+    mostrar=cambiarTexto("lblMensaje",mensaje2);
 }
