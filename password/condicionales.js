@@ -1,7 +1,6 @@
 esMayuscula=function(caracter){
     let mensaje;
-    let recuperar=RecuperarTexto(caracter);
-    let letra=recuperar.charCodeAt(0);
+    let letra=caracter.charCodeAt(0);
     if(letra>= 65){
         if(letra<=90){
             mensaje=true;
@@ -11,14 +10,12 @@ esMayuscula=function(caracter){
     }else{
         mensaje=false;
     }
-    mostrarTexto(mensaje);
     return mensaje;
 }
 
 esCaracterEspecial=function(caracter){
     let mensaje=0;
-    let recuperar=RecuperarTexto(caracter);
-    let letra=recuperar.charCodeAt(0);
+    let letra=caracter.charCodeAt(0);
     let resumen=true;
     if(letra == 42){
         mensaje=mensaje+1;
@@ -38,8 +35,7 @@ esCaracterEspecial=function(caracter){
 
 esDigito=function(caracter){
     let mensaje;
-    let recuperar=RecuperarTexto(caracter);
-    let letra=recuperar.charCodeAt(0);
+    let letra=caracter.charCodeAt(0);
     if(letra>= 48){
         if(letra<=57){
             mensaje=true;
@@ -49,7 +45,6 @@ esDigito=function(caracter){
     }else{
         mensaje=false;
     }
-    mostrarTexto(mensaje);
     return mensaje;
 }
 
