@@ -1,4 +1,8 @@
 //No se olvide de respirar, mantenga la calma y demuestre lo que sabe
+let palabraSecretaGlobal;
+let intentosGlobal=0;
+let coincidienciasGlobal=0;
+let errores=0;
 
 esMayuscula = function (caracter) {
     let codigo = caracter.charCodeAt(0);
@@ -63,5 +67,24 @@ validar = function (letra) {
         mostraAhorcado();
     } else {
         coincidienciasGlobal++;
+    }
+}
+
+
+ingresarLetra=function(){
+    let recuperaLetra;
+    recuperaLetra=recuperarTexto("txtLetra");
+    if(esMayuscula(recuperaLetra)){
+        validar(recuperaLetra);
+        if(coincidienciasGlobal===5){
+            mostrarImagen("ahorcadoImagen", "ganador.gif");
+        }
+    }else{
+        alert("SOLO SE ACEPTAN MAYUSCULAS")
+    }
+    intentosGlobal++;
+    if(intentosGlobal===10){
+        mostrarImagen("ahorcadoImagen", "gameOver.gif");
+
     }
 }
