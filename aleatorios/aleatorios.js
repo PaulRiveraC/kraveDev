@@ -1,5 +1,6 @@
 
-
+let aleatorios;
+let aleatoriosArray = [];
 aleato1 = function () {
     min = 1;
     max = 100;
@@ -9,32 +10,19 @@ aleato1 = function () {
 }
 
 generarAleatorios = function () {
-    let aleatorios = [];
-    let numero = recuperarTexto("txtNumero");
+    let numero = recuperarInt("txtNumero");
     let validar = false;
-    let imprimir;
-    let imprimir2;
-    let ale;
-    let guardado;
-    let pantalla;
-    if (numero >= 5) {
-        if (numero <= 20) {
-            validar = true;
-            for (let i = 0; i < numero; i++) {
-                ale = aleato1();
-                aleatorios[i];
-                aleatorios.push[ale];
-                imprimir = console.log(ale);
-                imprimir2 = console.log(aleatorios.push[ale]);
-            }
-            pantalla = mostrarResultados(guardado);
-        } else {
-            validar;
+    if (numero >= 5 && numero <= 20) {
+        validar = true;
+        for (let i = 0; i < numero; i++) {
+            aleatorios = aleato1();
+            aleatoriosArray.push(aleatorios); // Parentesis
+            console.log(aleatorios);
         }
+        mostrarResultados(aleatoriosArray);
     } else {
-        validar;
+        mostrarTexto("lblerrores","El numero debe ser entre 5 y 20");
     }
-
 }
 
 
@@ -68,7 +56,7 @@ mostrarResultados = function (arreglonumeros) {
 }
 
 
-
+/** 
 mostraNota = function () {
     let cmpTabla = document.getElementById("divTable");
     let contenidoTabla = "<table><tr><th>NOTA</th></tr>";
@@ -82,3 +70,4 @@ mostraNota = function () {
     contenidoTabla += "</table>"
     cmpTabla.innerHTML = contenidoTabla;
 }
+*/
