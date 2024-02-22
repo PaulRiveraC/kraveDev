@@ -5,10 +5,10 @@ let coincidienciasGlobal=0;
 let errores=0;
 
 esMayuscula = function (caracter) {
-    let codigo = caracter.charCodeAt(0);
-    if (codigo >= 65 && codigo <= 90) {
+    let codigoAscii = caracter.charCodeAt(0);
+    if(codigoAscii >= 65 && codigoAscii <= 90){
         return true
-    } else {
+    } else{
         return false
     }
 }
@@ -17,24 +17,24 @@ guardarPalabra = function () {
     let palabra;
     let longitud;
     let letra;
-    let contador = false;
+    let contador=false;
 
     palabra = recuperarTexto("txtSecreta");
     longitud = palabra.length;
 
-    for (let i = 0; i < palabra.length; i++) {
-        letra = palabra.charAt(i);
-        if (esMayuscula(letra)) {
-            contador = true;
+    for(let i=0;i<palabra.length;i++){
+        letra=palabra.charAt(i);
+        if(esMayuscula(letra)){
+            contador=true;
         }
     }
-
+    
     if (longitud != 5) {
         mostrarTexto("lblErrores", "Debe tener 5 Caracteres");
-    } else if (contador == false) {
+    }else if(contador == false){
         mostrarTexto("lblErrores", "Todas las letras deben ser Mayusculas");
-    } else {
-        palabraSecretaGlobal = palabra;
+    }else {
+        palabraSecretaGlobal=palabra;
         console.log(palabraSecretaGlobal);
     }
 }
@@ -76,14 +76,14 @@ ingresarLetra=function(){
     if(esMayuscula(recuperaLetra)){
         validar(recuperaLetra);
         if(coincidienciasGlobal===5){
-            alert("HA GANADO");
+            mostrarImagen("ahorcadoImagen", "ganador.gif");
         }
     }else{
         alert("SOLO SE ACEPTAN MAYUSCULAS")
     }
     intentosGlobal++;
     if(intentosGlobal===10){
-        alert("HA PERDIDO");
+        mostrarImagen("ahorcadoImagen", "gameOver.gif");
 
     }
 }
