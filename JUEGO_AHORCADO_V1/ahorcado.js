@@ -53,23 +53,22 @@ mostrarLetra = function (letra, posicion) {
     }
 }
 
-validar = function (letra) {
-    let letrasEncontradas = 0;
-    for (let i = 0; i < palabraSecretaGlobal.length; i++) {
-        if (palabraSecretaGlobal.charAt(i) === letra) {
+validar=function(letra){
+    let letrasEncontradas=0;
+    for(let i=0;i<palabraSecretaGlobal.length;i++){
+        if(palabraSecretaGlobal.charAt(i)===letra){
             mostrarLetra(letra, i)
             letrasEncontradas++
         }
     }
-    if (letrasEncontradas == 0) {
+    if(letrasEncontradas==0){
         alert("LA LETRA NO ES PARTE DE LA PALABRA");
         errores++;
         mostraAhorcado();
-    } else {
+    } else{
         coincidienciasGlobal++;
     }
 }
-
 
 ingresarLetra=function(){
     let recuperaLetra;
