@@ -48,3 +48,20 @@ mostrarLetra = function (letra, posicion) {
         mostrarTexto("div4", letra)
     }
 }
+
+validar = function (letra) {
+    let letrasEncontradas = 0;
+    for (let i = 0; i < palabraSecretaGlobal.length; i++) {
+        if (palabraSecretaGlobal.charAt(i) === letra) {
+            mostrarLetra(letra, i)
+            letrasEncontradas++
+        }
+    }
+    if (letrasEncontradas == 0) {
+        alert("LA LETRA NO ES PARTE DE LA PALABRA");
+        errores++;
+        mostraAhorcado();
+    } else {
+        coincidienciasGlobal++;
+    }
+}
