@@ -192,3 +192,27 @@ buscarporRol = function () {
         alert("EL EMPLEADO NO EXISTE")
     )
 }
+
+calcularAporteEmpleado = function (sueldo) {
+    sueldo = sueldo * (9.45 / 100);
+    return sueldo.toFixed(2);
+}
+
+calcularValorAPagar = function (sueldo, aporte, descuento) {
+    let pagar = (sueldo - aporte) - descuento;
+    return pagar.toFixed(2);
+}
+
+calcularRol = function () {
+    let recuperadoSueldo = recuperarTextoDiv("infoSueldo");
+    let recuperadoDescuento = recuperarFloat("txtDescuentos");
+    let resultadoAporteEmpleado;
+    let resultadoValorAPagar;
+    if (recuperadoDescuento != "" && recuperadoDescuento >= 0 && recuperadoDescuento <= recuperadoSueldo) {
+        resultadoAporteEmpleado = calcularAporteEmpleado(recuperadoSueldo);
+        mostrarTexto("infoIESS", resultadoAporteEmpleado)
+        resultadoValorAPagar = calcularValorAPagar(recuperadoSueldo, resultadoAporteEmpleado, recuperadoDescuento)
+        mostrarTexto("infoPago", resultadoValorAPagar)
+        habilitarComponente("btnGuardarRol");
+    }
+}
