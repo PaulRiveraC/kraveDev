@@ -98,7 +98,6 @@ guardar = function () {
     let mayusculaApellido = esMayuscula(valorApellido);
     let objetoEmpleado = [];
     let guardarEmpleado;
-    let nuevo= ejecutraNuevo();
 
     if (esCedula == 10) {
         mostrarTexto("lblErrorCedula", "");
@@ -123,32 +122,30 @@ guardar = function () {
     } else {
         mostrarTexto("lblErrorSueldo", "El valor del suledo debe ser entre 400 y 5000 dolares");
     }
-    let encontrar= buscarEmpleado (valorCedula);
-    if (encontrar == null){
-        nuevo;
-        if (esNuevo == true) {
-            objetoEmpleado.cedula = valorCedula;
-            objetoEmpleado.nombre = valorNombre;
-            objetoEmpleado.apellido = valorApellido;
-            objetoEmpleado.sueldo = valorSueldo;
-            guardarEmpleado = agregarEmpleado(objetoEmpleado);
-            if (guardarEmpleado == true) {
-                empleados.push(objetoEmpleado);
-                alert("Empleado Guardado Correctamente")
-                mostrarEmpleado();
-                deshabilitarComponente("txtCedula");
-                deshabilitarComponente("txtNombre");
-                deshabilitarComponente("txtApellido");
-                deshabilitarComponente("txtSueldo");
-            }
-        }
 
-       
-    } else {
-        alert("Ya existe un empleado con la cedula"+ valorCedula);
+    if (esNuevo == true) {
+        objetoEmpleado.cedula = valorCedula;
+        objetoEmpleado.nombre = valorNombre;
+        objetoEmpleado.apellido = valorApellido;
+        objetoEmpleado.sueldo = valorSueldo;
+        guardarEmpleado = agregarEmpleado(objetoEmpleado);
+        if (guardarEmpleado == true) {
+            empleados.push(objetoEmpleado);
+            alert("Empleado Guardado Correctamente")
+            mostrarEmpleado();
+            deshabilitar();
+        }
     }
-    
-    
+    if (esNuevo == false) {
+        objetoEmpleado.cedula = valorCedula
+        objetoEmpleado.nombre = valorNombre;
+        objetoEmpleado.apellido = valorApellido;
+        objetoEmpleado.sueldo = valorSueldo;
+        guardarEmpleado = buscarEmpleado(objetoEmpleado);
+        alert("EMPLEADO MODIFICADO EXITOSAMENTE");
+        mostrarEmpleado();
+        deshabilitar();
+    }
 }
 
 deshabilitar = function () {
@@ -157,4 +154,21 @@ deshabilitar = function () {
     deshabilitarComponente("txtApellido");
     deshabilitarComponente("txtSueldo");
     deshabilitarComponente("btnGuardar");
+}
+
+ejecutarBusqueda = function () {
+    let valorCedula = recuperarTexto("txtBusquedaCedula");
+    let empleado = buscarEmpleado(valorCedula);
+    if (empleado === null) {
+        alert("EMPLEADO NO EXISTE");
+    } else {
+        mostrarTextoEnCaja("txtCedula", empleado.cedula);
+        mostrarTextoEnCaja("txtNombre", empleado.nombre);
+        mostrarTextoEnCaja("txtApellido", empleado.apellido);
+        mostrarTextoEnCaja("txtSueldo", empleado.sueldo);
+        deshabilitarComponente("txtCedula");
+        habilitarComponente("txtNombre");
+        habilitarComponente("txtApellido");
+        habilitarComponente("txtSueldo");
+    }
 }
