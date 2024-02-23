@@ -199,7 +199,7 @@ calcularAporteEmpleado = function (sueldo) {
 }
 
 calcularValorAPagar = function (sueldo, aporte, descuento) {
-    let pagar = (sueldo - aporte) - descuento;
+    let pagar = sueldo - (aporte + descuento);
     return pagar.toFixed(2);
 }
 
