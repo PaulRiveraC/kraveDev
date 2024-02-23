@@ -5,6 +5,7 @@ let empleados = [
 ]
 
 let esNuevo = false;
+let roles = [];
 
 mostrarOpcionEmpleado = function () {
     let mostrar;
@@ -215,4 +216,50 @@ calcularRol = function () {
         mostrarTexto("infoPago", resultadoValorAPagar)
         habilitarComponente("btnGuardarRol");
     }
+}
+
+buscarRol = function (cedula) {
+    let buscarRolCedula;
+    let rolEncontrado = null;
+    for (let i = 0; i < roles.length; i++) {
+        buscarRolCedula = roles[i];
+        if (buscarRolCedula.cedula == cedula) {
+            rolEncontrado = buscarRolCedula;
+            break;
+        }
+    } return rolEncontrado;
+}
+
+agregarRol = function (rol) {
+    let resultado;
+    resultado = buscarRol(rol.cedula);
+    if (resultado == null) {
+        roles.push(rol);
+        alert("Cliente Agregado");
+    } else {
+        alert("ya existe el cliente con esa cedula: " + cliente.cedula);
+    }
+}
+
+calcularAporteEmpleador = function (sueldo) {
+    sueldo = sueldo * (11.15 / 100);
+    return sueldo.toFixed(2);
+}
+
+guardarRol = function () {
+    let pagar = recuperarTextoDiv("infoPago");
+    let aporte = recuperarTextoDiv("infoIESS");
+    let nombre = recuperarTextoDiv("infoNombre");
+    let cedula = recuperarTextoDiv("infoCedula");
+    let sueldo = recuperarTextoDiv("infoSueldo");
+    let apoteIees = calcularAporteEmpleador(sueldo);
+    let rol = {}
+    rol.pagar = pagar
+    rol.aporte = aporte
+    rol.nombre = nombre
+    rol.cedula = cedula
+    rol.aporteIees = apoteIees
+    agregarRol(rol);
+    alert("EXITO")
+    deshabilitarComponente("btnGuardarRol");
 }
