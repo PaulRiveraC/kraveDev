@@ -136,7 +136,10 @@ guardar = function () {
                 empleados.push(objetoEmpleado);
                 alert("Empleado Guardado Correctamente")
                 mostrarEmpleado();
-                deshabilitar();
+                deshabilitarComponente("txtCedula");
+                deshabilitarComponente("txtNombre");
+                deshabilitarComponente("txtApellido");
+                deshabilitarComponente("txtSueldo");
             }
         }
 
